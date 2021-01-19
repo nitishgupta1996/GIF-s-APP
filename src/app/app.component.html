@@ -1,0 +1,44 @@
+<div class="navbarTop">
+    <div class="container">
+        <div class="head">
+            <a href="#" class="navbar-brand">tenor</a>
+            <input type="text" class="form-control" placeholder="Search for GIFs" (keyup.enter)="onSearchValue($event)" (keyup)="onAutocomplete($event)">
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="!isHide">
+    <div class="row">
+        <div class="auto">
+            <ul *ngFor="let itemsList of autocompleteData">
+                <li (click)="onReceiveAutoData(itemsList)"><a href="#">{{ itemsList }}</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="isTrending">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Trending GIFs</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let trendingData of trendingGifData">
+            <img [src]="trendingData.media[0].gif.url" width="280" height="280">
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="isSearch">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>{{ searchVal }} GIFs</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" *ngFor="let autoData of searchData">
+            <img [src]="autoData.media[0].gif.url" width="280" height="280">
+        </div>
+    </div>
+</div>

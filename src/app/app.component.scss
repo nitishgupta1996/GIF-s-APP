@@ -1,0 +1,34 @@
+input {
+    margin-top: 8px;
+}
+
+.navbarTop {
+    background-color: lightskyblue;
+}
+
+.head {
+    display: flex;
+    a {
+        color: white;
+    }
+    span {
+        cursor: pointer;
+    }
+}
+
+img {
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+}
+
+.auto {
+    background-color: white;
+    ul {
+        text-decoration: none;
+        list-style: none;
+        margin: 0px 14px 0px 47px;
+    }
+    li {
+        padding: 0px 10px 10px 10px;
+    }
+}
